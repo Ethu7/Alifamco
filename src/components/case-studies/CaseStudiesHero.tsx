@@ -2,18 +2,24 @@
 
 import { motion } from "framer-motion";
 import { staggerContainer, staggerItem } from "@/lib/animations";
+import { HeroVideo } from "@/remotion/HeroVideo";
 
 export function CaseStudiesHero() {
   return (
     <section className="relative overflow-hidden px-4 sm:px-6 lg:px-8">
-      <div className="absolute inset-0 glow-oak-top" />
-      <div className="absolute inset-0 dot-grid" />
+      <div className="absolute inset-0 glow-amber-top z-0" />
+      <div className="absolute inset-0 dot-grid z-0" />
+      <HeroVideo
+        theme="amber"
+        images={["/images/compliance-tech.png"]}
+        titles={["Risk Mitigation Results"]}
+      />
 
       <motion.div
         variants={staggerContainer}
         initial="hidden"
         animate="visible"
-        className="relative mx-auto max-w-4xl py-24 sm:py-32 text-center"
+        className="relative z-10 mx-auto max-w-4xl py-24 sm:py-32 text-center"
       >
         <motion.span
           variants={staggerItem}

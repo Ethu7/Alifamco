@@ -6,6 +6,7 @@ import { CaseStudyHighlight } from "@/components/home/CaseStudyHighlight";
 import { PlatformCarousel } from "@/components/home/PlatformCarousel";
 import { TestimonialsSection } from "@/components/home/TestimonialsSection";
 import { CTASection } from "@/components/home/CTASection";
+import { InteractiveFinesCalculator } from "@/components/home/InteractiveFinesCalculator";
 
 export default function HomePage() {
   return (
@@ -13,6 +14,7 @@ export default function HomePage() {
       <HeroSection />
       <EcosystemSection />
       <ServicesPreview />
+      <InteractiveFinesCalculator />
       <ProcessSection />
       <CaseStudyHighlight />
       <PlatformCarousel />

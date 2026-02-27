@@ -17,6 +17,7 @@ export interface Service {
   platforms: string[];
   icon: LucideIcon;
   color: "oak" | "amber" | "cyan";
+  image: string;
 }
 
 export const services: Service[] = [
@@ -39,6 +40,7 @@ export const services: Service[] = [
     platforms: ["OneTrust", "BigID", "Securiti", "TrustArc"],
     icon: Shield,
     color: "oak",
+    image: "/images/services/privacy.png",
   },
   {
     id: "ai-governance",
@@ -59,6 +61,7 @@ export const services: Service[] = [
     platforms: ["OneTrust", "BigID", "Securiti"],
     icon: Brain,
     color: "amber",
+    image: "/images/services/ai-gov.png",
   },
   {
     id: "cookie-consent",
@@ -79,6 +82,7 @@ export const services: Service[] = [
     platforms: ["OneTrust", "TrustArc", "Securiti"],
     icon: Cookie,
     color: "cyan",
+    image: "/images/services/cookie.png",
   },
   {
     id: "data-mapping",
@@ -99,6 +103,7 @@ export const services: Service[] = [
     platforms: ["BigID", "Securiti", "OneTrust"],
     icon: Database,
     color: "amber",
+    image: "/images/services/data-map.png",
   },
   {
     id: "compliance-advisory",
@@ -119,6 +124,7 @@ export const services: Service[] = [
     platforms: ["OneTrust", "TrustArc", "BigID", "Securiti"],
     icon: FileCheck,
     color: "oak",
+    image: "/images/services/privacy.png",
   },
 ];
 

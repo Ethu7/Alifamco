@@ -5,6 +5,7 @@ export interface CaseStudy {
   serviceType: string;
   challenge: string;
   approach: string;
+  image: string;
   results: { metric: string; label: string }[];
   testimonial?: {
     quote: string;
@@ -25,6 +26,7 @@ export const caseStudies: CaseStudy[] = [
       "A Fortune 500 financial institution needed to unify privacy operations across 30+ countries with varying regulatory requirements, while processing over 10,000 DSARs annually through manual workflows.",
     approach:
       "We implemented OneTrust across the enterprise with custom DSAR automation workflows, geo-targeted consent rules, and integration with their existing ServiceNow and Salesforce infrastructure. The phased rollout started with EMEA, expanded to APAC, then Americas over 6 months.",
+    image: "/images/case-studies/finance.png",
     results: [
       { metric: "85%", label: "Reduction in DSAR response time" },
       { metric: "30+", label: "Countries unified on one platform" },
@@ -49,6 +51,7 @@ export const caseStudies: CaseStudy[] = [
       "A healthcare network with 200+ facilities had no visibility into where patient PHI resided across their hybrid cloud infrastructure, putting them at risk for HIPAA violations and making breach response nearly impossible.",
     approach:
       "We deployed BigID's data discovery engine across their on-premises databases, cloud storage, and 50+ SaaS applications. Custom classifiers were built for PHI detection, and automated data flow maps were generated to satisfy both HIPAA and state-level requirements.",
+    image: "/images/case-studies/healthcare.png",
     results: [
       { metric: "15K+", label: "Data sources cataloged" },
       { metric: "94%", label: "PHI detection accuracy" },
@@ -72,6 +75,7 @@ export const caseStudies: CaseStudy[] = [
       "An e-commerce platform operating in 15 EU markets was losing 40% of marketing attribution due to poorly configured cookie consent, while simultaneously receiving GDPR complaints from multiple DPAs.",
     approach:
       "We redesigned their consent experience using OneTrust's CMP with A/B tested banner designs, implemented granular geo-targeting rules for each market, and integrated consent signals with their Google Tag Manager and Adobe Analytics setup.",
+    image: "/images/case-studies/ecommerce.png",
     results: [
       { metric: "28%", label: "Increase in consent opt-in rate" },
       { metric: "0", label: "DPA complaints post-launch" },
@@ -89,6 +93,7 @@ export const caseStudies: CaseStudy[] = [
       "A B2B SaaS company embedding AI features across their product suite needed a governance framework before their largest enterprise clients would approve AI-enabled features, and ahead of the EU AI Act enforcement.",
     approach:
       "We designed and implemented a comprehensive AI governance program including model risk classification, bias auditing processes, documentation standards, and a vendor AI assessment framework. The program was operationalized through OneTrust's AI Governance module.",
+    image: "/images/case-studies/tech.png",
     results: [
       { metric: "50+", label: "AI models inventoried & classified" },
       { metric: "100%", label: "Enterprise client approval rate" },
@@ -112,6 +117,7 @@ export const caseStudies: CaseStudy[] = [
       "A multinational manufacturer needed to modernize their privacy program across 45 countries while dealing with legacy systems, factory floor IoT data, and complex supplier data sharing agreements.",
     approach:
       "We implemented Securiti's unified data command center to provide centralized privacy management across their global operations. Custom connectors were built for legacy ERP systems and IoT platforms, with automated data flow mapping for cross-border transfers.",
+    image: "/images/case-studies/manufacturing.png",
     results: [
       { metric: "45", label: "Countries on unified platform" },
       { metric: "70%", label: "Reduction in manual processes" },

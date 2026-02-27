@@ -35,11 +35,10 @@ export function CaseStudiesGrid() {
                 <button
                   key={ind}
                   onClick={() => setIndustryFilter(ind)}
-                  className={`rounded-full px-3 py-1.5 text-xs font-medium transition-colors ${
-                    industryFilter === ind
+                  className={`rounded-full px-3 py-1.5 text-xs font-medium transition-colors ${industryFilter === ind
                       ? "bg-oak-500/20 text-oak-400 border border-oak-500/30"
                       : "bg-white/[0.04] text-[#A1A1AA] border border-white/[0.06] hover:bg-white/[0.08]"
-                  }`}
+                    }`}
                 >
                   {ind}
                 </button>
@@ -55,11 +54,10 @@ export function CaseStudiesGrid() {
                 <button
                   key={st}
                   onClick={() => setServiceFilter(st)}
-                  className={`rounded-full px-3 py-1.5 text-xs font-medium transition-colors ${
-                    serviceFilter === st
+                  className={`rounded-full px-3 py-1.5 text-xs font-medium transition-colors ${serviceFilter === st
                       ? "bg-amber-500/20 text-amber-400 border border-amber-500/30"
                       : "bg-white/[0.04] text-[#A1A1AA] border border-white/[0.06] hover:bg-white/[0.08]"
-                  }`}
+                    }`}
                 >
                   {st}
                 </button>
@@ -82,6 +80,7 @@ export function CaseStudiesGrid() {
               company={cs.company}
               industry={cs.industry}
               challenge={cs.challenge}
+              image={cs.image}
               keyMetric={cs.results[0]?.metric ?? ""}
               metricLabel={cs.results[0]?.label ?? ""}
               tags={cs.tags}
@@ -117,23 +116,35 @@ export function CaseStudiesGrid() {
             >
               <button
                 onClick={() => setSelectedStudy(null)}
-                className="absolute right-4 top-4 rounded-lg p-1.5 text-[#A1A1AA] hover:text-white hover:bg-white/[0.06] transition-colors"
+                className="absolute right-4 top-4 rounded-full p-2 text-white bg-black/40 hover:bg-black/60 shadow-lg backdrop-blur-md transition-colors z-50"
               >
                 <X className="h-5 w-5" />
               </button>
 
-              <div className="flex items-center gap-3 mb-2">
-                <span className="inline-flex items-center rounded-full bg-oak-500/10 border border-oak-500/20 px-2.5 py-0.5 text-xs font-medium text-oak-400">
-                  {selectedStudy.industry}
-                </span>
-                <span className="text-xs text-[#71717A]">
-                  {selectedStudy.serviceType}
-                </span>
-              </div>
+              {/* Cover Image */}
+              <div className="relative w-full h-64 -mx-6 -mt-6 sm:-mx-10 sm:-mt-10 mb-8 overflow-hidden rounded-t-2xl z-0">
+                <img
+                  src={selectedStudy.image}
+                  alt={selectedStudy.company}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#111318] to-transparent pointer-events-none" />
 
-              <h2 className="text-2xl font-bold text-white font-display sm:text-3xl">
-                {selectedStudy.company}
-              </h2>
+                {/* Titles overlayed on image */}
+                <div className="absolute bottom-6 left-6 sm:left-10 z-10">
+                  <div className="flex items-center gap-3 mb-2">
+                    <span className="inline-flex items-center rounded-full bg-oak-500/20 backdrop-blur-md border border-oak-400/30 px-2.5 py-0.5 text-xs font-medium text-white shadow-sm">
+                      {selectedStudy.industry}
+                    </span>
+                    <span className="text-xs text-white/80 bg-black/30 backdrop-blur-sm rounded-full px-2 py-0.5">
+                      {selectedStudy.serviceType}
+                    </span>
+                  </div>
+                  <h2 className="text-2xl font-bold text-white font-display sm:text-3xl">
+                    {selectedStudy.company}
+                  </h2>
+                </div>
+              </div>
 
               {/* Challenge */}
               <div className="mt-6">

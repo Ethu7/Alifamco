@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { teamMembers } from "@/data/team";
 import { SectionHeader } from "@/components/shared/SectionHeader";
@@ -26,15 +27,16 @@ export function FounderSection() {
           viewport={viewportOnce}
           className="mt-12 glass-card rounded-2xl p-6 sm:p-10"
         >
-          <div className="flex flex-col gap-8 lg:flex-row lg:items-start">
-            {/* Avatar */}
-            <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-oak-500/10 border border-oak-500/20">
-              <span className="text-2xl font-bold text-oak-400 font-display">
-                {founder.name
-                  .split(" ")
-                  .map((n) => n[0])
-                  .join("")}
-              </span>
+          <div className="flex flex-col gap-8 lg:flex-row lg:items-center">
+            {/* Real Avatar/Portrait */}
+            <div className="relative w-full lg:w-1/3 h-80 lg:h-[400px] shrink-0 rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+              <Image
+                src="/images/about/founder.png"
+                alt={founder.name}
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent pointer-events-none" />
             </div>
 
             <div className="flex-1">
