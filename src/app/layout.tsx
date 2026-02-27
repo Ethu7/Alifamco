@@ -29,6 +29,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
+      <head>
+        <script
+          src="https://link.novaluxai.com/js/form_embed.js"
+          type="text/javascript"
+          async
+        />
+      </head>
       <body
         className={`${inter.variable} ${jakarta.variable} font-sans antialiased`}
       >
